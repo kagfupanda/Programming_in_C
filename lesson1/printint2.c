@@ -24,6 +24,12 @@ int main(void)
             if((i+1) % 10 == 0)
                 printf("\n");
     }
+    /*print integers from 0 to 10000, 10 in each line*/
+    for(int i = 0; i < 10000; i++){
+        printf("%04d ", i);
+            if((i+1) % 10 == 0)
+                printf("\n");
+    }
 
     return 0;
 }
