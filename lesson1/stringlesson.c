@@ -27,9 +27,17 @@ int main(int argc, char **argv)
 	/* strcat() is C library function to concatenate strings */
 	/* assume maximum string size MAX_STRINGLEN */
 	char result_string[MAX_STRINGLEN]; /* buffer to use to concatenate strings */
+#if 0
 	(void)strcpy(result_string, argv[1]); /* copy first string into result buffer */
 	strcat(result_string, argv[2]); /* append second string */
-
+#endif
+	/* make sure buffer is not written beyond size */
+	/* copy MAX_STRINGLEN -1 bytes */
+	strncpy(result_string, argv[1], MAX_STRINGLEN -1);
+	/* add the nul char terminate */
+	result_string[MAX_STRINGLEN-1] = '\0';
+	/* Append the secoond String */
+	strncat(result_string, argv[2], MAX_STRINGLEN-strlen(argv[1]) - 1);
 	/* output the result string */
 	printf("%s\n", result_string);
 	
