@@ -11,6 +11,7 @@
 *	a.out abcd xyz
 * Output printed should be: abcdxyz
 */
+#define MAX_STRINGLEN 128 /* Use to define constannts */
 int main(int argc, char **argv)
 {
 	/* Input strings are in argv*/
@@ -24,8 +25,8 @@ int main(int argc, char **argv)
 	}
 	
 	/* strcat() is C library function to concatenate strings */
-	/* assume maximum string size of 128 */
-	char result_string[128]; /* buffer to use to concatenate strings */
+	/* assume maximum string size MAX_STRINGLEN */
+	char result_string[MAX_STRINGLEN]; /* buffer to use to concatenate strings */
 	(void)strcpy(result_string, argv[1]); /* copy first string into result buffer */
 	strcat(result_string, argv[2]); /* append second string */
 
