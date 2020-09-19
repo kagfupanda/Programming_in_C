@@ -37,7 +37,8 @@ int main(int argc, char **argv)
 	/* add the nul char terminate */
 	result_string[MAX_STRINGLEN-1] = '\0';
 	/* Append the secoond String */
-	strncat(result_string, argv[2], MAX_STRINGLEN-strlen(argv[1]) - 1);
+	strncat(result_string, argv[2], MAX_STRINGLEN-strlen(result_string) - 1);
+	/* MAX_STRIGNLEN - strlen(result_string) -1 gives available space in result-string buffer */
 	/* output the result string */
 	printf("%s\n", result_string);
 	
